@@ -108,3 +108,5 @@ venv/
 constants.py
 data/
 
+*.DS_Store
+images/

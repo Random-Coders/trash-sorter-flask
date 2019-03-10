@@ -2,5 +2,5 @@ from trash import app
 
 app.run(
         debug=True,
-        port=5000
+        port=9000
         )
