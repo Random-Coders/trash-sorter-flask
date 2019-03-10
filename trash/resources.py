@@ -1,11 +1,35 @@
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
-import werkzeug
+import werkzeug, os
 
-class UploadAudio(Resource):
-  def post(self):
-    parse = reqparse.RequestParser()
-    parse.add_argument('file', type=werkzeug.datastructures.FileStorage, location='files')
-    args = parse.parse_args()
-    audioFile = args['file']
-    audioFile.save("your_file_name.jpg")IdentifyTrash():
+parser = reqparse.RequestParser()
+parser.add_argument('file', type=werkzeug.datastructures.FileStorage, location='files')
+
+
+class PhotoUpload(Resource):
+    def post(self):
+        data = parser.parse_args()
+        if data['file'] == "":
+            return {
+                    'data':'',
+                    'message':'No file found',
+                    'status':'error'
+                    }
+        photo = data['file']
+
+        if photo:
+            filename = 'image_to_indentify.png'
+            photo.save(os.path.join(UPLOAD_FOLDER,filename))
+            return {
+                    'data':'',
+                    'message':'photo uploaded',
+                    'status':'success'
+                    }
+        return {
+                'data':'',
+                'message':'Something when wrong',
+                'status':'error'
+                }
+
+class WhichBin(Resource):
+    pass
