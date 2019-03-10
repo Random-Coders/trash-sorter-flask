@@ -10,8 +10,8 @@ def chunks(l, n):
     for i in range(0, len(l), n):
         yield l[i:i + n]
 
-# add cardboard
-# cardboard files
+add cardboard
+cardboard files
 cardboard_imgs = os.listdir('data/train/cardboard')
 cardboard_imgs = list(chunks(cardboard_imgs, 128))
 for split_cardboard_imgs in cardboard_imgs:
@@ -72,6 +72,17 @@ for split_trash_imgs in trash_imgs:
 		imgs.append(img)
 	app.inputs.bulk_create_images(imgs)
 
+plastic_imgs = os.listdir('data/train/plastic')
+plastic_imgs = list(chunks(plastic_imgs, 128))
+for split_plastic_imgs in plastic_imgs:
+	imgs = []
+	for img_name in split_plastic_imgs:
+		print(img_name)
+		if img_name == ".DS_Store":
+			continue
+		img = ClImage(filename=f"data/train/plastic/{img_name}", concepts=["plastic"], not_concepts=["glass", "metal", "paper", "cardboard"])
+		imgs.append(img)
+	app.inputs.bulk_create_images(imgs)
 
 
 
