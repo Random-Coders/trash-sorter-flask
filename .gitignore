@@ -103,10 +103,10 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-config.py
 venv/
 constants.py
 data/
 
 *.DS_Store
-images/
+images/image.png
+
