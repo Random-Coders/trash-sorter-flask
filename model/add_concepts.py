@@ -5,10 +5,6 @@ import os
 
 app = ClarifaiApp(api_key=constants.CLARIFAI_API)
 
-# add multiple images with concepts
-# img1 = ClImage(filename="data/train/cardboard/cardboard1.jpg", concepts=['boscoe'], not_concepts=['our_wedding'])
-# img2 = ClImage(url="https://samples.clarifai.com/wedding.jpg", concepts=['our_wedding'], not_concepts=['cat','boscoe'])
-
 def chunks(l, n):
     """Yield successive n-sized chunks from l."""
     for i in range(0, len(l), n):
