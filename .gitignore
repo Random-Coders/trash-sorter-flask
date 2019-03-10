@@ -103,6 +103,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# gitignore extensions
+config.py
+venv/
 constants.py
 data/
+
