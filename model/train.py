@@ -3,5 +3,5 @@ import constants
 
 app = ClarifaiApp(api_key=constants.CLARIFAI_API)
 
-model = app.models.get('rafs')
+model = app.models.get('trashsorter')
 model.train()
