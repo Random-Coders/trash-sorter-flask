@@ -19,6 +19,10 @@ def download(url):
 	response = model.predict_by_url(url)
 	return json.dumps(response)
 
+@app.route("/", methods=["GET"])
+def home():
+    return render_template('index.html')
+
 @app.route("/upload", methods=["POST"])
 def upload():
     img = Image.open(request.files['file'])
@@ -26,5 +30,3 @@ def upload():
     img.save(f)
     return 'Success!'
 
-# if __name__ == "__main__":
-  # app.run(debug=True, port=9000)
