@@ -48,8 +48,8 @@ def sort():
                 place = 'trash'
             elif type_of_trash == 'glass':
                 place = 'recycle'
-           	else:
-           	    raise Exception
+            else:
+                raise Exception
             return render_template('index.html', var=place)
     return render_template('index.html', var=None)
 
