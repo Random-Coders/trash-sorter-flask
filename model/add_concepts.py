@@ -1,17 +1,14 @@
 from clarifai.rest import ClarifaiApp
 from clarifai.rest import Image as ClImage
-import constants
 import os
 
-app = ClarifaiApp(api_key=constants.CLARIFAI_API)
+app = ClarifaiApp(api_key=os.environ['CLARIFAICONSTANT'])
 
 def chunks(l, n):
     """Yield successive n-sized chunks from l."""
     for i in range(0, len(l), n):
         yield l[i:i + n]
 
-add cardboard
-cardboard files
 cardboard_imgs = os.listdir('data/train/cardboard')
 cardboard_imgs = list(chunks(cardboard_imgs, 128))
 for split_cardboard_imgs in cardboard_imgs:
