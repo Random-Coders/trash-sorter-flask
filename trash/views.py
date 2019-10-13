@@ -26,19 +26,19 @@ def sort():
             print(res['output']['data'])
             place = ''
             if response == 'plastic':
-            	place = 'recycle'
+                place = 'recycle'
             elif response == 'cardboard':
-            	place = 'compost'
+                place = 'compost'
             elif response == 'paper':
-            	place = 'recycle'
+                place = 'recycle'
             elif response == 'metal':
-            	place = 'trash'
+                place = 'trash'
             elif response == 'trash':
-            	place = 'trash'
+                place = 'trash'
             elif response == 'glass':
-            	place = 'recycle'
+                place = 'recycle'
            	else:
-           		raise Exception
+           	    raise Exception
             return render_template('index.html', var=place)
     return render_template('index.html', var=None)
 
