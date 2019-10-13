@@ -1,10 +1,11 @@
 from clarifai.rest import ClarifaiApp
-import constants
+import os
+#import constants
 
-app = ClarifaiApp(api_key=constants.CLARIFAI_API)
+app = ClarifaiApp(api_key=os.environ['CLARIFAICONSTANT'])
 model = app.models.get('trashsorter')
 # model.model_version = '1.0'  # This is optional. Defaults to the latest model version.
 
-response = model.predict_by_url('https://images-na.ssl-images-amazon.com/images/I/81Ui422yY9L._SL1500_.jpg')
+response = model.predict_by_url('http://www.recyclinggame.colostate.edu/images/chips.png')
 # model.predict_by_filename()
 print(response)
