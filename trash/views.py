@@ -23,7 +23,7 @@ def sort():
             f = path.join(app.config['UPLOAD_FOLDER'], 'image.png')
             img.save(f)
             res = model.predict_by_filename(path.join(app.config['UPLOAD_FOLDER'], 'image.png'))
-            print(res['output']['data'])
+            print(res['outputs'][0]['data']['concepts'])
             return 'success'
     return render_template('index.html')
 
