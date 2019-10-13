@@ -36,7 +36,7 @@ def sort():
             print(type_of_trash)
             place = ''
             if type_of_trash == 'plastic':
-                place = 'recycle'
+                place = 'trash'
             elif type_of_trash == 'cardboard':
                 place = 'compost'
             elif type_of_trash == 'paper':
