@@ -32,7 +32,10 @@
   <br>
   <br>
   <!--image box for user image-->
-  <img src="input.jpg" alt="Input">
+  <form action="/sort" method="POST" enctype="multipart/form-data">
+    <input type="file" accept="image/*" capture="camera" name="trash_pic">
+    <input type="submit" value="sort">
+  </form> 
   <br>
   <br>
   <img src="Output.jpg" alt="Output">
@@ -61,5 +64,7 @@
   <div class="copyright">&copy;2019 - <strong>Cap, Rafael, Leo, and Luna</strong></div>
 </div>
 <!-- Main Container Ends -->
+
+<script type="text/javascript" src="static/js/index.js"></script>
 </body>
 </html>
