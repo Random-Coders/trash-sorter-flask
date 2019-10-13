@@ -34,12 +34,28 @@ def sort():
             print(res['outputs'][0]['data']['concepts'])
             type_of_trash = max_concept(res['outputs'][0]['data']['concepts'])
             print(type_of_trash)
-            return 'success'
-    return render_template('index.html')
+            print(res['output']['data'])
+            place = ''
+            if type_of_trash == 'plastic':
+            	place = 'recycle'
+            elif type_of_trash == 'cardboard':
+            	place = 'compost'
+            elif type_of_trash == 'paper':
+            	place = 'recycle'
+            elif type_of_trash == 'metal':
+            	place = 'trash'
+            elif type_of_trash == 'trash':
+            	place = 'trash'
+            elif type_of_trash == 'glass':
+            	place = 'recycle'
+           	else:
+           		raise Exception
+            return render_template('index.html', var=place)
+    return render_template('index.html', var=None)
 
 @app.route("/", methods=["GET"])
 def home():
-    return render_template('index.html')
+    return render_template('index.html', var=None)
 
 @app.route("/upload", methods=["POST"])
 def upload():
