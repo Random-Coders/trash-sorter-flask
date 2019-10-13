@@ -24,12 +24,27 @@ def sort():
             img.save(f)
             res = model.predict_by_filename(path.join(app.config['UPLOAD_FOLDER'], 'image.png'))
             print(res['output']['data'])
-            return 'success'
-    return render_template('index.html')
+            place = ''
+            if response == 'plastic':
+            	place = 'recycle'
+            elif response == 'cardboard':
+            	place = 'compost'
+            elif response == 'paper':
+            	place = 'recycle'
+            elif response == 'metal':
+            	place = 'trash'
+            elif response == 'trash':
+            	place = 'trash'
+            elif response == 'glass':
+            	place = 'recycle'
+           	else:
+           		raise Exception
+            return render_template('index.html', var=place)
+    return render_template('index.html', var=None)
 
 @app.route("/", methods=["GET"])
 def home():
-    return render_template('index.html')
+    return render_template('index.html', var=None)
 
 @app.route("/upload", methods=["POST"])
 def upload():
