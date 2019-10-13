@@ -1,7 +1,8 @@
 from clarifai.rest import ClarifaiApp
-import constants
+import os
+#import constants
 
-app = ClarifaiApp(api_key=constants.CLARIFAI_API)
+app = ClarifaiApp(api_key=os.environ['CLARIFAICONSTANT'])
 model = app.models.get('trashsorter')
 # model.model_version = '1.0'  # This is optional. Defaults to the latest model version.
 
