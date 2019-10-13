@@ -71,6 +71,9 @@ ul li:hover a {
 	margin-left: 0px;
 	letter-spacing: 4px;
 }
+.mission {
+	padding-right: 20px;
+}
 /* Hero Section */
 .hero {
 	background-color: #B3B3B3;
