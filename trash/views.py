@@ -14,6 +14,14 @@ from clarifai.rest import Image as ClImage
 capp = ClarifaiApp(api_key='fa54b65808c746f6a0d3a71cf2457bc9')
 model = capp.models.get('trashsorter')
 
+def max_concept(l):
+    max_confidence = 0
+    best_concept = None
+    for concept in l:
+        if concept['value'] > max_confidence:
+            best_concept = concept['name']
+    return best_concept
+
 @app.route("/sort", methods=["GET", "POST"])
 def sort():
     if request.method == "POST":
@@ -24,6 +32,8 @@ def sort():
             img.save(f)
             res = model.predict_by_filename(path.join(app.config['UPLOAD_FOLDER'], 'image.png'))
             print(res['outputs'][0]['data']['concepts'])
+            type_of_trash = max_concept(res['outputs'][0]['data']['concepts'])
+            print(type_of_trash)
             return 'success'
     return render_template('index.html')
 
