@@ -34,7 +34,6 @@ def sort():
             print(res['outputs'][0]['data']['concepts'])
             type_of_trash = max_concept(res['outputs'][0]['data']['concepts'])
             print(type_of_trash)
-            print(res['output']['data'])
             place = ''
             if type_of_trash == 'plastic':
                 place = 'recycle'
