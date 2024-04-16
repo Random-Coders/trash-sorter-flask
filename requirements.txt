@@ -5,7 +5,7 @@ Click==7.0
 configparser==3.7.3
 Flask==1.0.2
 Flask-Uploads==0.2.1
-future==0.17.1
+future==0.18.3
 googleapis-common-protos==1.5.8
 grpcio==1.19.0
 idna==3.7
