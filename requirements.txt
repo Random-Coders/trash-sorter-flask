@@ -7,7 +7,7 @@ Flask==1.0.2
 Flask-Uploads==0.2.1
 future==0.17.1
 googleapis-common-protos==1.5.8
-grpcio==1.19.0
+grpcio==1.53.2
 idna==3.7
 itsdangerous==1.1.0
 Jinja2==3.1.3
